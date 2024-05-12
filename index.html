@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="height: 100vh; align-content: center; text-align: center;">
+    <h1>Jogo da Velha</h1>
+    <div style="display: flex; justify-content: center;">
+        <div id="quadro" style="display: block;">
+            <div class="linhas primeira-linha">
+                <button id="a1" onclick="obterProximo(event)"></button>
+                <button id="a2" onclick="obterProximo(event)"></button>
+                <button id="a3" onclick="obterProximo(event)"></button>
+            </div>
+            <div class="linhas segunda-linha">
+                <button id="b1" onclick="obterProximo(event)"></button>
+                <button id="b2" onclick="obterProximo(event)"></button>
+                <button id="b3" onclick="obterProximo(event)"></button>
+            </div>
+            <div class="linhas terceira-linha">
+                <button id="c1" onclick="obterProximo(event)"></button>
+                <button id="c2" onclick="obterProximo(event)"></button>
+                <button id="c3" onclick="obterProximo(event)"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="mensagemGanhador" class="mensagem"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
