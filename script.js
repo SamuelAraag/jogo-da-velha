@@ -24,10 +24,12 @@ function verificarGanhador(){
         var elemento = document.getElementById(id);
         todosInputs.push(elemento);
     });
+
+    if(todosInputs.every(x => !!x.innerHTML)) finalizarPartida();
     
     var [a1, a2, a3, b1, b2, b3, c1, c2, c3] = todosInputs.map(elemento => elemento.innerHTML);
     
-
+    
     let l1hx = [a1, a2, a3].every(valor => valor === 'X');
     let l2hx = [b1, b2, b3].every(valor => valor === 'X');
     let l3hx = [c1, c2, c3].every(valor => valor === 'X');
@@ -62,6 +64,13 @@ var span = document.getElementsByClassName("close")[0];
 function abrirModal() {
     let mensagem = document.getElementById('mensagemGanhador');
     mensagem.innerHTML = `O Jogador '${ultimoValor}' ganhou a partida`
+
+    modal.style.display = "block";
+}
+
+function finalizarPartida() {
+    let mensagem = document.getElementById('mensagemGanhador');
+    mensagem.innerHTML = "Deu velha, começe uma nova partida!"
 
     modal.style.display = "block";
 }
